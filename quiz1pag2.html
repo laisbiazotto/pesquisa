@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>QUIZ DE BICHOS</title>
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="shortcut icon" type="image/x-icon" href="img/sitepwifavicon.ico">
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
+    <a class="navbar-brand" href="pagina1.html">Qquiz</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Alterna navegação">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="quiz1.html">QUIZ SOBRE ANIMAIS </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="quiz2.html">QUIZ DE CONHECIMENTO</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link disabled" href="#">QUIZ EM DESENVOLVIMENTO</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="jumbotron text-center">
+    <h1>QUIZ SOBRE BICHOS</h1>
+    <p>Teste seu conhecimento sobre nossos animais.</p>
+  </div>
+
+  <form name="form1" >
+    <h4>QUAL É A MAIOR ESPÉCIE DE URSO DA AMÉRICA DO NORTE?</h4>
+      <label class='radiocontainer' id='label2'>
+        <input type='radio' name='questao' value='a' id='2' />Urso Pardo<span class='checkmark'></span>
+      </label>
+      <label class='radiocontainer' id='label3'> 
+        <input type='radio' name='questao' id='3' value='b' />Usro Polar<span class='checkmark'></span>
+      </label>
+      <label class='radiocontainer' id='label4'> 
+        <input type='radio' name='questao' id='4' value='c' />Urso Negro<span class='checkmark'></span>
+      </label>
+        <label class='radiocontainer' id='label1'> 
+          <input type='radio' name='questao' id='1' value='d' />Urso Cinzento<span class='checkmark'></span>
+      </label>
+  </form>
+
+<form name="form2" >
+  <h4>QUAL PAÍS ABRIGA A MAIOR BIODIVERSIDADE DE BEIJA-FLORES?</h4>
+    <label class='radiocontainer' id='label2'>
+      <input type='radio' name='questao' id='2' id='a2' />México<span class='checkmark'></span>
+    </label>
+    <label class='radiocontainer' id='label3'> 
+      <input type='radio' name='questao' value='b' id='a2' />Bolívia<span class='checkmark'></span>
+    </label>
+    <label class='radiocontainer' id='label4'> 
+      <input type='radio' name='questao' value='c' id='a2' />Colômbia<span class='checkmark'></span>
+    </label>
+      <label class='radiocontainer' id='label1'> 
+        <input type='radio' name='questao' value='d' id='a2' />Brasil<span class='checkmark'></span>
+    </label>
+</form>
+
+	<form class="margem" name="form3">
+		<h4>QUAL PAÍS ABRIGA A MAIOR BIODIVERSIDADE DE BEIJA-FLORES?</h4>
+		<input type="radio" name="questao" value="a" id="a3" />México</label>
+		<br>
+		<label>
+		<input type="radio" name="questao" value="b" id="a3" />Bolívia</label>
+		<br>
+		<label>
+		<input type="radio" name="questao" value="c" id="a3" />Colômbia</label>
+		<br>
+		<label>
+		<input type="radio" name="questao" value="d" id="a3" />Brasil</label>
+	</form>
+
+  <form class="margem" name="form4">
+		<h4>QUAL É A ESPÉCIE MAIS PERIGOSA DE TUBARÃO?</h4>
+		<input type="radio" name="questao" value="a" id="a4" />Tubarão Mangona</label>
+		<br>
+		<label>
+		<input type="radio" name="questao" value="b" id="a4" />Tubarão Tigre</label>
+		<br>
+		<label>
+		<input type="radio" name="questao" value="c" id="a4" />Tubarão Branco</label>
+		<br>
+		<label>
+		<input type="radio" name="questao" value="d" id="a4" />Tubarão Cabeça de Martelo</label>
+	</form>
+
+  <form class="margem" name="form5">
+		<h4>QUAL DESTES ANIMAIS É O ÚNICO MAMIFERO CAPAZ DE VOAR?</h4>
+		<input type="radio" name="questao" value="a" id="a5" />Coala</label>
+		<br>
+		<label>
+		<input type="radio" name="questao" value="b" id="a5" />Morcego</label>
+		<br>
+		<label>
+		<input type="radio" name="questao" value="c" id="a5" />Águia</label>
+		<br>
+		<label>
+		<input type="radio" name="questao" value="d" id="a5" />Falcão</label>
+	</form>
+  
+  <input class="margem" id="botao" type="submit" value="Enviar" onclick="validarForm()">
+  <p id="resultado"></p>
+
+  <script type="text/javascript">
+    //Variaveis
+    var form1;
+    var form2;
+    var form3;
+    var form4;
+    var form5;
+    var acertos = 0;
+
+    //Checagem
+    function validarForm() {
+      form1 = document.forms['form1'].elements['questao'];
+      form2 = document.forms['form2'].elements['questao'];
+      form3 = document.forms['form3'].elements['questao'];
+      form4 = document.forms['form4'].elements['questao'];
+      form5 = document.forms['form5'].elements['questao'];
+      if (form1.value == 'c') {
+        acertos++;
+      }else{}
+
+      if (form2.value == 'b') {
+        acertos++;
+      }else{}
+
+      if (form3.value == 'd') {
+        acertos++;
+      }else{}
+
+      if (form4.value == 'a') {
+        acertos++;
+      }else{}
+
+      if (form5.value == 'b') {
+        acertos++;
+      }else{}
+
+      document.getElementById('resultado').innerHTML = "Total de acertos: " + acertos + " de 5";
+      document.getElementById('botao').disabled = true;
+    }
+  </script>
+</body>
+
+</html>
